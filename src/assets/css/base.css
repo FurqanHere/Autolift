@@ -861,10 +861,10 @@ html {
   position: absolute;
   transform: rotate(-5deg);
   z-index: 2;
-  max-width: 250px;
+  max-width: 451px;
+  height: 521px;
   left: 20%;
   top: 10%;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .homepage-download-description {
