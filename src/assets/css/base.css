@@ -19,6 +19,12 @@ html {
   font-weight: bold;
 }
 
+.auto-lift-logo {
+  width: 156px;
+  height: 29px;
+  object-fit: contain;
+}
+
 .grecaptcha-badge {
   right: auto !important;
   left: 0 !important;
@@ -30,7 +36,7 @@ html {
 /* Navbar container */
 
 .navbar {
-  background-color: #fff !important;
+  /* background-color: #fff !important; */
   padding: 15px 0;
   transition: all 0.3s ease;
   z-index: 1000;
@@ -55,7 +61,7 @@ html {
 .nav-link {
   font-size: 15px;
   font-weight: 500;
-  color: #999;
+  color: #fff;
   position: relative;
   transition: color 0.3s ease;
   padding-bottom: 1px !important;
@@ -201,6 +207,8 @@ html {
   .carImg img {
     margin-top: 70px !important;
     margin-left: -110px !important;
+    transform: scaleX(-1) rotate(-7deg) translate(30px, 15px);
+    transform-origin: 55% 50%;
   }
   .header-banner {
     margin-top: 20px !important;
@@ -264,11 +272,15 @@ html {
 }
 /* Right Side */
 .carImg {
-  width: 90%;
-  margin-left: 130px;
+  width: 105%;
+  margin-left: 80px;
+  position: relative;
+  top: -20px;
 }
 .carImg img {
   width: 100%;
+  transform: scaleX(-1) rotate(0.5deg) translate(60px, 20px);
+  transform-origin: 60% 50%;
 }
 .bg-clr .bg-1 {
   background: #000;
@@ -276,16 +288,32 @@ html {
   width: 461px;
   height: 461;
 }
-.img1 {
-  background-image: url("../images/bg-img.png");
-  background-repeat: no-repeat;
-  background-position: 100% 60%;
-  background-size: contain;
+/* .img1 {
+  background-image: 
+  url("../images/bg-img.png"),
+   url("../images/bg-blue.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: calc(100% - 80px) 80px, left bottom;
+  background-size: 680px auto, 100% 100%;
   background-color: #ffffff;
-  height: 830px;
+  min-height: 830px;
+  position: relative;
+  overflow: hidden;
+} */
+.img1 {
+  background-image: 
+  /* url("../images/bg-img.png"), */
+   url("../images/bg-blue.png");
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 100%;
+  background-color: #ffffff;
+  min-height: 830px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* How it Work */
+/* About Us */
 .icon-1 i {
   padding: 27px 30px;
   border-radius: 30px;
@@ -703,4 +731,148 @@ html {
 .car-swiper .card-title {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
+}
+
+/* Mobile App Screenshots Section */
+.screenshots-hero {
+  position: relative;
+}
+
+.screenshots-hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background-image: url("../images/bg-blue.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+/* HomePage About Us Section */
+.homepage-about-heading {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212529;
+}
+
+.homepage-about-image {
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.homepage-about-text-wrapper {
+  padding-top: 0px;
+}
+
+.homepage-about-paragraph-bold {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #495057;
+  margin-bottom: 16px;
+}
+
+.homepage-about-paragraph-regular {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #495057;
+}
+
+.homepage-about-stat-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #212529;
+}
+
+.homepage-about-stat-label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #6c757d;
+}
+
+/* HomePage Explore Premium Features Section */
+.homepage-features-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.homepage-features-heading {
+  color: #0d6efd;
+}
+
+.homepage-features-description {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.homepage-features-icon {
+  color: #0d6efd;
+}
+
+/* HomePage Mobile App Screenshots Section */
+.homepage-screenshots-section {
+  background-color: #3F85DE;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.homepage-screenshots-container {
+  position: relative;
+  z-index: 1;
+}
+
+.homepage-screenshots-heading {
+  color: #ffffff;
+}
+
+.homepage-screenshots-description {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.homepage-screenshots-image {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* HomePage Download App Section */
+.homepage-download-section {
+  background-color: #f8f9fa;
+}
+
+.homepage-download-image-wrapper {
+  position: relative;
+  height: 500px;
+}
+
+.homepage-download-image {
+  position: absolute;
+  transform: rotate(-5deg);
+  z-index: 2;
+  max-width: 250px;
+  left: 20%;
+  top: 10%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.homepage-download-description {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.homepage-download-button {
+  height: 60px;
+  width: auto;
 }

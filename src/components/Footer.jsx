@@ -1,129 +1,49 @@
-import React from "react";
-import white_logo from "../assets/images/white-logo.png";
+import React, { useState } from "react";
+// import white_logo from "../assets/images/white-logo.png";
 import googlePlay from "../assets/images/white-google.png";
 import applePlay from "../assets/images/white-apple-logo.png";
-import starMap from "../assets/images/starMap.png";
 import { Link, useLocation } from "react-router-dom";
 
 import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   const location = useLocation();
+  const [email, setEmail] = useState("");
 
   // Function to handle navigation to homepage sections
   const handleSectionNavigation = (sectionId) => {
     if (location.pathname === '/') {
-      // If already on homepage, scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      // If on other page, navigate to homepage with hash
       window.location.href = `/#${sectionId}`;
     }
   };
 
-  return (
-    <div className="footer" style={{ marginTop: "100px" }}>
-      <div className="container pt-5">
-        <div className="row">
-          <div className="col-md-5 col-sm-5 text-white">
-            <img
-              alt="Logo"
-              src={white_logo}
-              className="footer-logo"
-              width={"100px"}
-            />
-            {/* <h2 className="mt-5" style={{ fontSize: "25px" }}>
-              Subscribe to our Newsletter
-            </h2>
-            <p className="fw-lighter">
-              Be the first to receive all latest post in your inbox
-            </p> */}
-            {/* <div className="inp mt-5">
-              <input type="text" name="" id="" placeholder="Enter your email" />
-              <i class="bi bi-send-fill"></i>
-            </div> */}
-            {/* <p className="fw-lighter text-muted-50 mt-3">
-              By clicking send link you agree to receive message.
-            </p> */}
-            {/* <p>
-              <a
-                href="mailto:business@gearapp.ae"
-                className="text-white underline me-2"
-              >
-                business@gearapp.ae
-              </a>
-              |
-              <a href="tel:+971561145454" className="text-white underline ms-2">
-                +971 56 114 5454
-              </a>
-            </p> */}
-          </div>
-          <div className="col-md-4 col-12 col-sm-2 text-white mt-5">
-            {/* <h4 className="fw-semibold text-center">Top Links</h4> */}
-            <div className="d-flex justify-content-between">
-              <nav className="nav footer-nav flex-column py-3 me-3">
-                <Link to={"/"} className="nav-link text-white mb-3">
-                  Home
-                </Link>
-                <button 
-                  className="nav-link text-white mb-3 btn btn-link p-0 text-start"
-                  onClick={() => handleSectionNavigation('howitwork')}
-                  style={{ textDecoration: 'none', border: 'none', background: 'none' }}
-                >
-                  How it Work!
-                </button>
-                <button 
-                  className="nav-link text-white mb-3 btn btn-link p-0 text-start"
-                  onClick={() => handleSectionNavigation('whyChooseUs')}
-                  style={{ textDecoration: 'none', border: 'none', background: 'none' }}
-                >
-                  Why Choose Us
-                </button>
-                <button 
-                  className="nav-link text-white mb-3 btn btn-link p-0 text-start"
-                  onClick={() => handleSectionNavigation('screenshot')}
-                  style={{ textDecoration: 'none', border: 'none', background: 'none' }}
-                >
-                  Screenshots
-                </button>
-                <button 
-                  className="nav-link text-white mb-3 btn btn-link p-0 text-start"
-                  onClick={() => handleSectionNavigation('downloadApp')}
-                  style={{ textDecoration: 'none', border: 'none', background: 'none' }}
-                >
-                  Download App
-                </button>
-              </nav>
-              <nav className="nav footer-nav flex-column py-3">
-                <Link to="/terms" className="nav-link text-white mb-3">
-                  Terms and Condition
-                </Link>
-                <Link to="/privacy" className="nav-link text-white mb-3">
-                  Privacy Policy
-                </Link>
-                <Link to="/cancellation-policy" className="nav-link text-white mb-3">
-                  Cancellation Policy
-                </Link>
-                <Link to="/support" className="nav-link text-white mb-3">
-                  Support
-                </Link>
-                <Link to="/Contact-us" className="nav-link text-white mb-3">
-                  Contact Us
-                </Link>
-              </nav>
-            </div>
-          </div>
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    // Handle subscription logic here
+    console.log("Subscribed:", email);
+    setEmail("");
+  };
 
-          <div className="col-md-3 col-12 text-white">
-            <h6 className="fw-semibold text-white fs-4 fw-bolder mt-5">
-              Download App
-            </h6>
-            <div className="footer-download-btn mt-4">
+  return (
+    <div className="footer" style={{ backgroundColor: "#3F85DE", marginTop: "100px", padding: "60px 0 0 0" }}>
+      <div className="container pb-4">
+        <div className="row">
+          {/* Left Section - Brand Information */}
+          <div className="col-md-4 col-sm-12 mb-4 mb-md-0">
+            <div className="d-flex align-items-center mb-3">
+              
+              <h3 className="text-white fw-bold mb-0">AUTOLIFT</h3>
+            </div>
+            <p className="text-white mb-4" style={{ fontSize: "14px", lineHeight: "1.6" }}>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
+            </p>
+            <div className="d-flex flex-column flex-sm-row gap-2">
               <a
                 href="https://apps.apple.com/ae/app/gear-hire-car/id6747331842"
                 target="_blank"
@@ -131,60 +51,158 @@ const Footer = () => {
               >
                 <img
                   src={applePlay}
-                  className="apple-pay-img"
-                  alt="Download on Apple Store"
+                  alt="Download on the App Store"
+                  style={{ height: "40px", width: "auto" }}
                 />
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.devicebee.gear"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ms-3"
               >
                 <img
                   src={googlePlay}
-                  alt="Get it on Google Play"
-                  className="google-pay-img"
+                  alt="Download from Google Play"
+                  style={{ height: "40px", width: "auto" }}
                 />
               </a>
             </div>
+          </div>
 
-            <ul className="footer-icons">
-              <li className="icons-li">
-                <a href="https://www.X.com/gearap_ae" target="_blank">
-                  <i class="mx-3">
-                    <FaXTwitter />
-                  </i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/gearap_ae" target="_blank">
-                  <i class="mx-3">
-                    <FaInstagram />
-                  </i>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedIn/gearap_ae" target="_blank">
-                  <i class="mx-3">
-                    <FaLinkedinIn />
-                  </i>
-                </a>
-              </li>
-            </ul>
+          {/* Middle Sections - Navigation Links */}
+          <div className="col-md-4 col-sm-12 mb-4 mb-md-0">
+            <div className="row">
+              <div className="col-6">
+                <h5 className="text-white fw-bold mb-3">Top Links</h5>
+                <nav className="nav flex-column">
+                  <Link to="/" className="nav-link text-white p-0 mb-2" style={{ fontSize: "14px" }}>
+                    Home
+                  </Link>
+                  <button 
+                    className="nav-link text-white p-0 mb-2 btn btn-link text-start"
+                    onClick={() => handleSectionNavigation('aboutus')}
+                    style={{ textDecoration: 'none', border: 'none', background: 'none', fontSize: "14px", color: "white" }}
+                  >
+                    About Us
+                  </button>
+                  <button 
+                    className="nav-link text-white p-0 mb-2 btn btn-link text-start"
+                    onClick={() => handleSectionNavigation('howitwork')}
+                    style={{ textDecoration: 'none', border: 'none', background: 'none', fontSize: "14px", color: "white" }}
+                  >
+                    How It Works
+                  </button>
+                  <button 
+                    className="nav-link text-white p-0 mb-2 btn btn-link text-start"
+                    onClick={() => handleSectionNavigation('screenshot')}
+                    style={{ textDecoration: 'none', border: 'none', background: 'none', fontSize: "14px", color: "white" }}
+                  >
+                    App Screenshots
+                  </button>
+                  <button 
+                    className="nav-link text-white p-0 mb-2 btn btn-link text-start"
+                    onClick={() => handleSectionNavigation('downloadApp')}
+                    style={{ textDecoration: 'none', border: 'none', background: 'none', fontSize: "14px", color: "white" }}
+                  >
+                    Download App
+                  </button>
+                  <Link to="/Contact-us" className="nav-link text-white p-0 mb-2" style={{ fontSize: "14px" }}>
+                    Contact Us
+                  </Link>
+                </nav>
+              </div>
+              <div className="col-6">
+                <h5 className="text-white fw-bold mb-3">Our Terms</h5>
+                <nav className="nav flex-column">
+                  <Link to="/privacy" className="nav-link text-white p-0 mb-2" style={{ fontSize: "14px" }}>
+                    Privacy policy
+                  </Link>
+                  <Link to="/terms" className="nav-link text-white p-0 mb-2" style={{ fontSize: "14px" }}>
+                    Terms & Conditions
+                  </Link>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Section - Stay Up To Date */}
+          <div className="col-md-4 col-sm-12">
+            <h5 className="text-white fw-bold mb-3">Stay Up To Date</h5>
+            <p className="text-white mb-3" style={{ fontSize: "14px", lineHeight: "1.6" }}>
+              Get updates about new features, job trends, and early access offers from Shiftly.
+            </p>
+            <p className="text-white mb-3" style={{ fontSize: "14px" }}>
+              <a href="mailto:contact@shiftly.ae" className="text-white text-decoration-none">
+                contact@shiftly.ae
+              </a>
+            </p>
+            <form onSubmit={handleSubscribe} className="d-flex align-items-center">
+              <div className="position-relative flex-grow-1 me-2">
+                <i className="bi bi-envelope position-absolute text-white" style={{ left: "12px", top: "50%", transform: "translateY(-50%)", zIndex: 1 }}></i>
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  style={{
+                    paddingLeft: "40px",
+                    backgroundColor: "rgba(255, 255, 255, 0.2)",
+                    border: "1px solid rgba(255, 255, 255, 0.3)",
+                    color: "white",
+                    borderRadius: "25px"
+                  }}
+                />
+                <style>{`
+                  input::placeholder {
+                    color: rgba(255, 255, 255, 0.7) !important;
+                  }
+                `}</style>
+              </div>
+              <button
+                type="submit"
+                className="btn text-white fw-bold"
+                style={{
+                  backgroundColor: "#2563eb",
+                  border: "none",
+                  borderRadius: "25px",
+                  padding: "8px 24px",
+                  whiteSpace: "nowrap"
+                }}
+              >
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
       </div>
+
+      {/* Bottom Bar */}
       <div
-        class="footer-bottom p-3 mt-3"
-        style={{ background: "rgba(39, 39, 39, 1)" }}
+        className="footer-bottom py-3"
+        style={{ backgroundColor: "#3F85DE", borderTop: "1px solid rgba(255, 255, 255, 0.2)" }}
       >
-        <div class="container my-auto d-flex justify-content-center align-items-center">
-          <div class="copyright text-start my-auto text-white">
-            <span style={{ fontSize: "15px" }}>
-              © Copyrights 2025 FIRST GEAR AUTO USING ELECTRONIC MEDIA RENTING
-              VEHICLES L.L.C. All rights reserved.
-            </span>
+        <div className="container d-flex justify-content-between align-items-center flex-wrap">
+          <div className="text-white mb-2 mb-md-0" style={{ fontSize: "14px" }}>
+            All rights reserved. Shiftly LLC FZ © 2025 |{" "}
+            <a href="mailto:contact@shiftly.ae" className="text-white text-decoration-none">
+              contact@shiftly.ae
+            </a>
+          </div>
+          <div className="d-flex gap-3">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaFacebook size={20} />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaInstagram size={20} />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaXTwitter size={20} />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaYoutube size={20} />
+            </a>
           </div>
         </div>
       </div>

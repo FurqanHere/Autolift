@@ -7,9 +7,9 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
 import { Dropdown } from "primereact/dropdown";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 import ApiService from "../services/ApiService";
 
@@ -24,10 +24,10 @@ const UAE_STATES = [
 ];
 
 const Partner = () => {
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
   const [isLoader, setIsLoader] = useState(false);
   const [files, setFiles] = useState(null);
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
+  // const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const [formData, setFormData] = useState({
     owner_name: "",
@@ -99,7 +99,7 @@ const Partner = () => {
       }
       
       // Append reCAPTCHA value
-      formDataToSend.append("recaptcha", recaptchaValue);
+      // formDataToSend.append("recaptcha", recaptchaValue);
 
     
       // Append files from dropzone

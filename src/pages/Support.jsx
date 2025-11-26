@@ -3,8 +3,6 @@ import { useLocation } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
-import car_summer from "../assets/images/car-summer.png"
-import yellow_line from "../assets/images/yellow-line.png"
 
 const PrivacyPolicy = () => {
   const { t, i18n } = useTranslation();
@@ -33,7 +31,7 @@ const PrivacyPolicy = () => {
           <div className="col-md-7 d-flex flex-column justify-content-center">
             <div className="position-relative">
               <h2 className="fw-bold">Contact Gear</h2>
-              <img src={yellow_line} className="yellow_line" />
+              {/* <img src={yellow_line} className="yellow_line" /> */}
             </div>
 
             <p>Contact Gear by phone or email</p>

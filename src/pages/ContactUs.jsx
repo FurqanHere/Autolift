@@ -5,16 +5,14 @@ import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 import ApiService from "../services/ApiService";
-import ReCAPTCHA from "react-google-recaptcha";
-import car_summer from "../assets/images/car-summer.png";
-import yellow_line from "../assets/images/yellow-line.png";
-import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+// import ReCAPTCHA from "react-google-recaptcha";
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 const ContactUs = () => {
   const { t, i18n } = useTranslation();
   const { pathname } = useLocation();
 
-  const { executeRecaptcha } = useGoogleReCaptcha();
+  // const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +27,7 @@ const ContactUs = () => {
 
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
   const [submitting, setSubmitting] = useState(false);
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
+  // const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,8 +52,8 @@ const ContactUs = () => {
     
     try {
       setSubmitting(true);
-      const formDataWithRecaptcha = { ...form, recaptcha: recaptchaValue };
-      const response = await ApiService.request({ method: "POST", url: "/contactUs", data: formDataWithRecaptcha });
+      // const formDataWithRecaptcha = { ...form, recaptcha: recaptchaValue };
+      const response = await ApiService.request({ method: "POST", url: "/contactUs", data: form });
       if (response.data.status) {
         Swal.fire({ 
           icon: "success", 
@@ -111,7 +109,7 @@ const ContactUs = () => {
           <div className="col-md-7 d-flex flex-column justify-content-center">
             <div className="position-relative">
               <h2 className="fw-bold">Contact Gear</h2>
-              <img src={yellow_line} className="yellow_line" />
+              {/* <img src={yellow_line} className="yellow_line" /> */}
             </div>
             <p>Contact Gear by phone or email</p>
             <p>

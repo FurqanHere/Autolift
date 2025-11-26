@@ -5,8 +5,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './assets/css/base.css';
-import AOS from "aos";
-import "aos/dist/aos.css";
+// import AOS from "aos";
+// import "aos/dist/aos.css";
 
 function App() {
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
         metaKeywords.content = process.env.REACT_APP_META_KEYWORDS || 'React App keywords';
      }
 
-     AOS.init({ duration: 1200, once: false });
+     // AOS.init({ duration: 1200, once: false });
 
 }, []);
 

@@ -4,15 +4,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { PrimeReactProvider } from 'primereact/api';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+// import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <PrimeReactProvider value={{ ripple: false, hideOverlaysOnDocumentScrolling: true }}>
-      <GoogleReCaptchaProvider reCaptchaKey="6Ldbt9orAAAAAAKylDUHQHcr8pzW1cpXcPLiTllb">
+      {/* <GoogleReCaptchaProvider reCaptchaKey="6Ldbt9orAAAAAAKylDUHQHcr8pzW1cpXcPLiTllb"> */}
         <App />
-      </GoogleReCaptchaProvider>
+      {/* </GoogleReCaptchaProvider> */}
     </PrimeReactProvider>
   </React.StrictMode>
 );
