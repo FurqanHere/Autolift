@@ -92,7 +92,7 @@ const PrivacyPolicy = () => {
                     type="submit"
                     className="btn fw-bold"
                     style={{
-                      backgroundColor: "#FEF233",
+                      backgroundColor: "#3F85DE",
                       color: "black",
                       borderRadius: "10px",
                       width: "120px",

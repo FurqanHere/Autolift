@@ -76,7 +76,7 @@ const Partner = () => {
     //     title: "reCAPTCHA Required",
     //     text: "Please complete the reCAPTCHA verification",
     //     confirmButtonText: "OK",
-    //     confirmButtonColor: "#FEF233",
+    //     confirmButtonColor: "#3F85DE",
     //     confirmButtonAriaLabel: "OK",
     //     customClass: {
     //       confirmButton: "swal-confirm-btn"
@@ -131,7 +131,7 @@ const Partner = () => {
            title: "Form Submitted!",
            text: response.data.message,
            confirmButtonText: "OK",
-           confirmButtonColor: "#FEF233",
+           confirmButtonColor: "#3F85DE",
            confirmButtonAriaLabel: "OK",
            customClass: {
              confirmButton: "swal-confirm-btn"
@@ -144,7 +144,7 @@ const Partner = () => {
           title: "Error Occurred!",
           text: "Unable to submit contact query. Write email manually to support@lastorder.com",
           confirmButtonText: "OK",
-          confirmButtonColor: "#FEF233",
+          confirmButtonColor: "#3F85DE",
           confirmButtonAriaLabel: "OK",
           customClass: {
             confirmButton: "swal-confirm-btn"
@@ -277,7 +277,7 @@ const Partner = () => {
                         type="submit"
                         className="btn fw-bold px-4 py-2"
                         style={{ 
-                          backgroundColor: "#FEF233", 
+                          backgroundColor: "#3F85DE", 
                           color: "#000", 
                           borderRadius: "12px",
                           minWidth: "120px",

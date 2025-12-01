@@ -41,7 +41,7 @@ const ContactUs = () => {
     //     title: "reCAPTCHA Required",
     //     text: "Please complete the reCAPTCHA verification",
     //     confirmButtonText: "OK",
-    //     confirmButtonColor: "#FEF233",
+    //     confirmButtonColor: "#3F85DE",
     //     confirmButtonAriaLabel: "OK",
     //     customClass: {
     //       confirmButton: "swal-confirm-btn"
@@ -60,7 +60,7 @@ const ContactUs = () => {
           title: "Submitted", 
           text: response.data.message, 
           confirmButtonText: "OK",
-          confirmButtonColor: "#FEF233",
+          confirmButtonColor: "#3F85DE",
           confirmButtonAriaLabel: "OK",
           customClass: {
             confirmButton: "swal-confirm-btn"
@@ -73,7 +73,7 @@ const ContactUs = () => {
           title: "Error", 
           text: response.data.message || "Failed to submit",
           confirmButtonText: "OK",
-          confirmButtonColor: "#FEF233",
+          confirmButtonColor: "#3F85DE",
           confirmButtonAriaLabel: "OK",
           customClass: {
             confirmButton: "swal-confirm-btn"
@@ -86,7 +86,7 @@ const ContactUs = () => {
         title: "Error", 
         text: "Failed to submit",
         confirmButtonText: "OK",
-        confirmButtonColor: "#FEF233",
+        confirmButtonColor: "#3F85DE",
         confirmButtonAriaLabel: "OK",
         customClass: {
           confirmButton: "swal-confirm-btn"
@@ -184,7 +184,7 @@ const ContactUs = () => {
                     type="submit"
                     className="btn fw-bold"
                     style={{
-                      backgroundColor: "#FEF233",
+                      backgroundColor: "#3F85DE",
                       color: "black",
                       borderRadius: "10px",
                       width: "120px",
