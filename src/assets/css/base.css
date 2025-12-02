@@ -175,7 +175,7 @@ html {
 }
 
 .offcanvas-header {
-  background-color: #000000;
+  background-color: #3F85DE;
   border-radius: 0 0 20px 20px;
   padding: 20px 20px 20px 20px !important;
   margin-bottom: 0;
@@ -573,7 +573,6 @@ html {
   list-style: none;
   display: flex;
   align-items: center;
-  margin-top: 20px;
   padding: 0px !important;
 }
 .footer-icons li a i {
@@ -1170,6 +1169,7 @@ html {
 /* Footer Copyright Text */
 .footer-copyright-text {
   font-size: 14px;
+  color: white;
 }
 
 /* Logo Hover Effects */
@@ -1575,6 +1575,7 @@ html {
   .homepage-about-paragraph-bold {
     font-size: 20px !important;
     line-height: 36px !important;
+    text-align: justify !important;
   }
   
   .homepage-about-paragraph-regular {
@@ -1687,11 +1688,13 @@ html {
   .homepage-about-paragraph-bold {
     font-size: 18px !important;
     line-height: 30px !important;
+    text-align: justify !important;
   }
   
   .homepage-about-paragraph-regular {
     font-size: 16px !important;
     line-height: 28px !important;
+    text-align: justify !important;
   }
   
   .homepage-about-stat-number {

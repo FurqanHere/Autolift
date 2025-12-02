@@ -139,25 +139,43 @@ const Footer = () => {
                 contact@shiftly.ae
               </a>
             </p>
-            <form onSubmit={handleSubscribe} className="footer-subscribe-form">
-              <div className="footer-subscribe-input-wrapper">
-                <i className="bi bi-envelope footer-subscribe-icon"></i>
-                <input
-                  type="email"
-                  className="form-control footer-subscribe-input"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn footer-subscribe-button"
-              >
-                Subscribe
-              </button>
-            </form>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Bottom Bar with Copyright */}
+      <div className="footer-bottom-bar">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-md-6 col-12 text-center text-md-start mb-2 mb-md-0">
+              <p className="footer-copyright-text mb-0">
+                © {new Date().getFullYear()} Autolift. All rights reserved.
+              </p>
+            </div>
+            <div className="col-md-6 col-12 text-center text-md-end">
+              <ul className="footer-icons list-unstyled mb-0 d-flex justify-content-center justify-content-md-end gap-3">
+                <li>
+                  <a href="#" aria-label="Facebook" className="text-white">
+                    <FaFacebook />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Instagram" className="text-white">
+                    <FaInstagram />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Twitter" className="text-white">
+                    <FaXTwitter />
+                  </a>
+                </li>
+                <li>
+                  <a href="#" aria-label="YouTube" className="text-white">
+                    <FaYoutube />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
